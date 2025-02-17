@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-/* Basic styling for the page */
 body {
     font-family: Arial, sans-serif;
     overflow: hidden;
@@ -17,10 +16,11 @@ body {
 
 /* Cloud Gate Styling */
 .cloudGate {
-    width: 80%;
+    width: 70%;
     max-width: 800px;
     height: 60%;
-    background: url('https://i.imgur.com/3Dclouds.jpg') center/cover no-repeat;
+    background-color: #87CEEB;
+    border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,11 +29,27 @@ body {
     text-align: center;
     font-size: 24px;
     cursor: pointer;
-    border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    animation: gateEntrance 3s ease-in-out forwards;
+    position: relative;
+    overflow: hidden;
+    animation: gateEntrance 2s ease-in-out forwards;
 }
 
+/* Cloud effect on the gate */
+.cloudGate::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: -50px;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    box-shadow: 0px 0px 40px 5px rgba(255, 255, 255, 0.5);
+    animation: cloudMove 5s infinite linear;
+}
+
+/* Gate Text Styling */
 .cloudGate h1, .cloudGate p {
     animation: fadeIn 2s ease-in-out;
 }
@@ -83,3 +99,13 @@ body {
         opacity: 1;
     }
 }
+
+/* Cloud movement effect */
+@keyframes cloudMove {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+    }
