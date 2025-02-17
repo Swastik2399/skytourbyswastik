@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* Cloud Gate Styling */
+.cloudGate {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: url('https://i.imgur.com/3Dclouds.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    animation: gateEntrance 3s ease-in-out forwards;
+}
+
+.cloudGate h1, .cloudGate p {
+    animation: fadeIn 2s ease-in-out;
+}
+
+.cloudGate p {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+/* Sky Scene Styling */
+.hidden {
+    display: none;
+}
+
+.skyBackground {
+    background: linear-gradient(180deg, #87CEEB, #FFD700);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.happyBirthdayText {
+    font-size: 50px;
+    color: #FFD700;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Animations */
+@keyframes gateEntrance {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
